@@ -45,7 +45,7 @@ class generateDataSet:
         vNeutro = self.CreateDictionayValue(trainNeutro)
         vGood = self.CreateDictionayValue(trainGood)
         accurracy = 0
-        for i in range(0, 15):
+        for i in range(0, len(yTrain)):
             classse = 0
             # bad = self.CalculateProbabilityOfBelongingToClass(xTest, list(set(vNeutro).union(set(vGood))), (trainGood + trainNeutro),i)
             # good = self.CalculateProbabilityOfBelongingToClass(xTest, list(set(vNeutro).union(set(vBad))), (trainNeutro + trainBad),i)
@@ -61,7 +61,7 @@ class generateDataSet:
                 classse = 3
             if classse == yTest[i]:
                 accurracy += 1
-        value = accurracy/15
+        value = accurracy/len(yTrain)
         value *=100
         print(value)
 
